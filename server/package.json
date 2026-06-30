@@ -1,18 +1,17 @@
 {
-  "name": "warmcall-server",
+  "name": "warmcall",
   "version": "0.2.0",
   "private": true,
-  "type": "module",
+  "description": "WarmCall MVP - 养老陪伴聊天应用",
   "scripts": {
-    "dev": "node --watch index.js",
-    "start": "node index.js"
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "build": "npm install --prefix client && npm run build --prefix client && npm install --prefix server",
+    "start": "npm start --prefix server"
   },
-  "dependencies": {
-    "bcryptjs": "^3.0.2",
-    "better-sqlite3": "^11.8.1",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
-    "jsonwebtoken": "^9.0.2"
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   }
 }
