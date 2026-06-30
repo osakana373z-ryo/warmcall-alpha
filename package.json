@@ -1,0 +1,15 @@
+{
+  "name": "warmcall",
+  "version": "0.2.0",
+  "private": true,
+  "description": "WarmCall MVP - 养老陪伴聊天应用",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
